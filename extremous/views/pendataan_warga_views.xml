@@ -1,0 +1,65 @@
+<odoo>
+  <data>
+
+    <record id="data_warga_view_form" model="ir.ui.view">
+      <field name="name">data.warga.view.form</field>
+      <field name="model">data.warga</field>
+      <field name="arch" type="xml">
+        <form string="Pendataan Warga">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                <label for="name" string="Nama Lengkap"/>
+                <br/>
+                <field name="name"/>
+              </h1>
+            </div>
+            <group name="data_diri" string="Data Diri" col="4">
+              <field name="tempat_lahir" />
+              <field name="tanggal_lahir" />
+              <field name="pendidikan_terakhir" />
+              <field name="nomor_telepon" />
+              <field name="email" />
+            </group>
+            <group name="alamat" string="Alamat">
+              <field name="kota_administrasi" />
+              <field name="kec_jkt_timur" attrs="{'invisible':[('kota_administrasi','!=','jkt_timur')]}"/>
+              <field name="kec_jkt_barat" attrs="{'invisible':[('kota_administrasi','!=','jkt_barat')]}"/>
+              <field name="kec_jkt_selatan" attrs="{'invisible':[('kota_administrasi','!=','jkt_selatan')]}"/>
+              <field name="kec_jkt_utara" attrs="{'invisible':[('kota_administrasi','!=','jkt_utara')]}"/>
+              <field name="kec_jkt_pusat" attrs="{'invisible':[('kota_administrasi','!=','jkt_pusat')]}"/>
+              <field name="kec_kep_seribu" attrs="{'invisible':[('kota_administrasi','!=','kep_seribu')]}"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="data_warga_view_tree" model="ir.ui.view">
+      <field name="name">data.warga.view.tree</field>
+      <field name="model">data.warga</field>
+      <field name="arch" type="xml">
+        <tree string="Form">
+          <field name="name" />
+          <field name="tempat_lahir" />
+          <field name="tanggal_lahir" />
+        </tree>
+      </field>
+    </record>
+
+
+    <record id="pendataan_warga_action" model="ir.actions.act_window">
+      <field name="name">Pendataan Warga</field>
+      <field name="res_model">data.warga</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[]</field>
+      <field name="context">{}</field>
+    </record>
+
+
+
+    <menuitem id="pendataan_warga_root_menu" name="Pendataan Warga" web_icon="extremous,static/description/odoo_icon.png"/>
+    <menuitem id="pendataan_warga_sub_menu" name="Pendataan Warga" action="pendataan_warga_action" parent="pendataan_warga_root_menu"/>
+
+  </data>
+</odoo>
