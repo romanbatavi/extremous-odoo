@@ -30,66 +30,10 @@ class extremous(models.Model):
     kec_kep_seribu = fields.Selection([('kep_seribu_utara', 'Kepulauan Seribu Utara'),('kep_seribu_selatan', 'Kepulauan Seribu Selatan')], string='Kecamatan')
     
     # KECAMATAN =======================================================================
-    kel_cakung = fields.Selection([
-('cakung_barat', 'Cakung Barat'),
-('cakung_timur', 'Cakung Timur'),
-('jatinegara', 'Jatinegara'),
-('penggilingan', 'Penggilingan'),
-('pulo_gebang', 'Pulo Gebang'),
-('pulo_gadung', 'Rawa Terate'),
-('ujung_menteng', 'Ujung Menteng')
-    ], string='Kelurahan')
-    kel_cipayung = fields.Selection([
-('bambu_apus', 'Bambu Apus'),
-('ceger', 'Ceger'),
-('cilangkap', 'Cilangkap'),
-('cipayung', 'Cipayung'),
-('lubang_buaya', 'Lubang Buaya'),
-('munjul', 'Munjul'),
-('pondok_ranggon', 'Pondok Ranggon'),
-('setu', 'Setu')
-    ], string='Kelurahan')
-    kel_ciracas = fields.Selection([
-('key', 'Cibubur'),
-('key', 'Ciracas'),
-('key', 'Kelapa Dua Wetan'),
-('key', 'Rambutan'),
-('key', 'Susukan')
-    ], string='Kelurahan')
-    kel_duren_sawit = fields.Selection([
-('key', 'Duren Sawit'),
-('key', 'Klender'),
-('key', 'Malaka Jaya'),
- ('key', 'Malaka Sari'),
-('key', 'Pondok Bambu'),
-('key', 'Pondok Kelapa'),
-('key', 'Pondok Kopi')
-    ], string='Kelurahan')
-    kel_duren_sawit = fields.Selection([
-        ('key', 'Bali Mester'),
-        ('key', 'Bidara Cina'),
-        ('key', 'Cipinang Besar Selatan'),
-        ('key', 'Cipinang Besar Utara'),
-        ('key', 'Cipinang Cempedak'),
-        ('key', 'Cipinang Muara'),
-        ('key', 'Kampung Melayu'),
-        ('key', 'Rawa Bunga')
-    ], string='Kelurahan')
-    kel_jatinegara = fields.Selection([
-        ('key', 'Duren Sawit'),
-        ('key', 'Klender'),
-        ('key', 'Malaka Jaya'),
-        ('key', 'Malaka Sari'),
-        ('key', 'Pondok Bambu'),
-        ('key', 'Pondok Kelapa'),
-        ('key', 'Pondok Kopi')
-    ], string='Kelurahan')
-    kel_kramat_jati = fields.Selection([
-        ('key', 'Balekambang'),
-        ('key', 'Batu Ampar'),
-        ('key', 'Cawang'),
-        ('key', 'Cililitan'),
-        ('key', 'Dukuh'),
-        ('key', 'Kramat Jati'),
-        ('key', 'Tengah')
-    ], string='Kelurahan')
+    kel_cakung = fields.Selection([('cakung_barat', 'Cakung Barat'),('cakung_timur', 'Cakung Timur'),('jatinegara', 'Jatinegara'),('penggilingan', 'Penggilingan'),('pulo_gebang', 'Pulo Gebang'),('pulo_gadung', 'Rawa Terate'),('ujung_menteng', 'Ujung Menteng')], string='Kelurahan')
+    kel_cipayung = fields.Selection([('bambu_apus', 'Bambu Apus'),('ceger', 'Ceger'),('cilangkap', 'Cilangkap'),('cipayung', 'Cipayung'),('lubang_buaya', 'Lubang Buaya'),('munjul', 'Munjul'),('pondok_ranggon', 'Pondok Ranggon'),('setu', 'Setu')], string='Kelurahan')
+    kel_ciracas = fields.Selection([('cibubur', 'Cibubur'),('ciracas', 'Ciracas'),('kelapa_dua_wetan', 'Kelapa Dua Wetan'),('rambutan', 'Rambutan'),('susukan', 'Susukan')], string='Kelurahan')
+    kel_duren_sawit = fields.Selection([('duren_sawit', 'Duren Sawit'),('klender', 'Klender'),('malaka_jaya', 'Malaka Jaya'),('malaka_sari', 'Malaka Sari'),('pondok_kopi', 'Pondok Bambu'),('pondok_kelapa', 'Pondok Kelapa'),('pondok_kopi', 'Pondok Kopi')], string='Kelurahan')
+    kel_jatinegara = fields.Selection([('bali_mester', 'Bali Mester'),('bidara_cina', 'Bidara Cina'),('cipinang_besar_selatan', 'Cipinang Besar Selatan'),('cipinang_besar_utara', 'Cipinang Besar Utara'),('cipinang_cempedak', 'Cipinang Cempedak'),('cipinang_muara', 'Cipinang Muara'),('kampung_melayu', 'Kampung Melayu'),('rawa_bunga', 'Rawa Bunga')], string='Kelurahan')
+    kel_kramat_jati = fields.Selection([('balekambang', 'Balekambang'),('batu_ampar', 'Batu Ampar'),('cawang', 'Cawang'),('cililitan', 'Cililitan'),('dukuh', 'Dukuh'),('kramat_jati', 'Kramat Jati'),('tengah', 'Tengah')], string='Kelurahan')
+    
