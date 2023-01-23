@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
                 <tree string="Master Kota Administrasi">
                     <field name="master_kota_administrasi_id" />
-                    <field name="is_kecamatan" />
+                    <field name="nama_kecamatan" />
                 </tree>
             </field>
         </record>
@@ -20,7 +20,7 @@
                     <sheet>
                         <group>
                             <field name="master_kota_administrasi_id" />
-                            <field name="is_kecamatan" />
+                            <field name="nama_kecamatan" />
                         </group>
                     </sheet>
                 </form>

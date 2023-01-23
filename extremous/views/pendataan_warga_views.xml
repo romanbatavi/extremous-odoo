@@ -23,8 +23,14 @@
             </group>
             <group name="alamat" string="Alamat">
               <field name="kota_administrasi" />
-              <field name="kec_jkt_timur" attrs="{'invisible':[('kota_administrasi','!=','jkt_timur')]}"/>
-              <field name="kec_jkt_barat" attrs="{'invisible':[('kota_administrasi','!=','jkt_barat')]}"/>
+              <field name="bool_timur" invisible="1"/>
+              <field name="bool_barat" invisible="1"/>
+              <field name="bool_selatan" invisible="1"/>
+              <field name="bool_utara" invisible="1"/>
+              <field name="bool_pusat" invisible="1"/>
+              <field name="bool_kep_seribu" invisible="1"/>
+              <field name="kec_jkt_timur" attrs="{'invisible':[('kota_administrasi','!=','jkt_selatan')]}"/>
+              <field name="kec_jkt_barat" attrs="{'invisible':[('kota_administrasi','!=','jkt_selatan')]}"/>
               <field name="kec_jkt_selatan" attrs="{'invisible':[('kota_administrasi','!=','jkt_selatan')]}"/>
               <field name="kec_jkt_utara" attrs="{'invisible':[('kota_administrasi','!=','jkt_utara')]}"/>
               <field name="kec_jkt_pusat" attrs="{'invisible':[('kota_administrasi','!=','jkt_pusat')]}"/>

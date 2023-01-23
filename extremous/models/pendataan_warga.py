@@ -3,10 +3,161 @@
 from odoo import models, fields, api
 
 
-class extremous(models.Model):
+class DataWarga(models.Model):
     _name = 'data.warga'
     _description = 'Data Warga'
 
+    bool_timur = fields.Boolean(compute='_compute_bool_timur', default=False, string='Bool Timur', store=True)
+    bool_barat = fields.Boolean(compute='_compute_bool_barat', default=False, string='Bool Barat', store=True)
+    bool_selatan = fields.Boolean(compute='_compute_bool_selatan', default=False, string='Bool Selatan', store=True)
+    bool_utara = fields.Boolean(compute='_compute_bool_utara', default=False, string='Bool Utara', store=True)
+    bool_pusat = fields.Boolean(compute='_compute_bool_pusat', default=False, string='Bool Pusat', store=True)
+    bool_kep_seribu = fields.Boolean(compute='_compute_bool_kep_seribu', default=False, string='Bool Kep.Seribu', store=True)
+
+    @api.depends('bool_timur','kec_jkt_timur')
+    def _compute_bool_timur(self):
+        for x in self:
+            if x.kec_jkt_timur:
+                x.bool_timur = True
+                x.bool_barat = False
+                x.bool_selatan = False
+                x.bool_utara = False
+                x.bool_pusat = False
+                x.bool_kep_seribu = False
+
+                x.kec_jkt_barat = False
+                x.kec_jkt_selatan = False
+                x.kec_jkt_utara = False
+                x.kec_jkt_pusat = False
+                x.kec_kep_seribu = False
+            else:
+                x.bool_timur = False
+                x.bool_barat = False
+                x.bool_selatan = False
+                x.bool_utara = False
+                x.bool_pusat = False
+                x.bool_kep_seribu = False
+
+    @api.depends('bool_barat','kec_jkt_barat')
+    def _compute_bool_barat(self):
+        for x in self:
+            if x.kec_jkt_barat:
+                x.bool_timur = False
+                x.bool_barat = True
+                x.bool_selatan = False
+                x.bool_utara = False
+                x.bool_pusat = False
+                x.bool_kep_seribu = False
+
+                x.kec_jkt_timur = False
+                x.kec_jkt_selatan = False
+                x.kec_jkt_utara = False
+                x.kec_jkt_pusat = False
+                x.kec_kep_seribu = False
+            else:
+                x.bool_timur = False
+                x.bool_barat = False
+                x.bool_selatan = False
+                x.bool_utara = False
+                x.bool_pusat = False
+                x.bool_kep_seribu = False
+
+    @api.depends('bool_selatan','kec_jkt_selatan')
+    def _compute_bool_selatan(self):
+        for x in self:
+            if x.kec_jkt_selatan:
+                x.bool_timur = False
+                x.bool_barat = False
+                x.bool_selatan = True
+                x.bool_utara = False
+                x.bool_pusat = False
+                x.bool_kep_seribu = False
+
+                x.kec_jkt_timur = False
+                x.kec_jkt_barat = False
+                x.kec_jkt_utara = False
+                x.kec_jkt_pusat = False
+                x.kec_kep_seribu = False
+            else:
+                x.bool_timur = False
+                x.bool_barat = False
+                x.bool_selatan = False
+                x.bool_utara = False
+                x.bool_pusat = False
+                x.bool_kep_seribu = False
+
+    @api.depends('bool_utara','kec_jkt_utara')
+    def _compute_bool_utara(self):
+        for x in self:
+            if x.kec_jkt_utara:
+                x.bool_timur = False
+                x.bool_barat = False
+                x.bool_selatan = False
+                x.bool_utara = True
+                x.bool_pusat = False
+                x.bool_kep_seribu = False
+
+                x.kec_jkt_timur = False
+                x.kec_jkt_barat = False
+                x.kec_jkt_selatan = False
+                x.kec_jkt_pusat = False
+                x.kec_kep_seribu = False
+            else:
+                x.bool_timur = False
+                x.bool_barat = False
+                x.bool_selatan = False
+                x.bool_utara = False
+                x.bool_pusat = False
+                x.bool_kep_seribu = False
+
+    @api.depends('bool_pusat','kec_jkt_pusat')
+    def _compute_bool_pusat(self):
+        for x in self:
+            if x.kec_jkt_pusat:
+                x.bool_timur = False
+                x.bool_barat = False
+                x.bool_selatan = False
+                x.bool_utara = False
+                x.bool_pusat = True
+                x.bool_kep_seribu = False
+
+                x.kec_jkt_timur = False
+                x.kec_jkt_barat = False
+                x.kec_jkt_selatan = False
+                x.kec_jkt_utara = False
+                x.kec_kep_seribu = False
+            else:
+                x.bool_timur = False
+                x.bool_barat = False
+                x.bool_selatan = False
+                x.bool_utara = False
+                x.bool_pusat = False
+                x.bool_kep_seribu = False
+
+    @api.depends('bool_kep_seribu','kec_kep_seribu')
+    def _compute_bool_kep_seribu(self):
+        for x in self:
+            if x.kec_kep_seribu:
+                x.bool_timur = False
+                x.bool_barat = False
+                x.bool_selatan = False
+                x.bool_utara = False
+                x.bool_pusat = False
+                x.bool_kep_seribu = True
+
+                x.kec_kep_timur = False
+                x.kec_jkt_barat = False
+                x.kec_jkt_selatan = False
+                x.kec_jkt_utara = False
+                x.kec_jkt_pusat = False
+            else:
+                x.bool_timur = False
+                x.bool_barat = False
+                x.bool_selatan = False
+                x.bool_utara = False
+                x.bool_pusat = False
+                x.bool_kep_seribu = False
+    
     # DATA DIRI =======================================================================
     name = fields.Char('Nama Lengkap')
     nik = fields.Char('NIK')
@@ -16,14 +167,14 @@ class extremous(models.Model):
     pendidikan_terakhir = fields.Selection([('sd', 'Sekolah Dasar'),('sma_smk', 'SMA / SMK / Sederajat'),('d3', 'D3'),('d4', 'D4'),('s1', 'S1'),('s2', 'S2'),('s3', 'S3'),('lainnya', 'Lainnya'),], string='Pendidikan Terakhir')
     nomor_telepon = fields.Char('Nomor Telepon')
     email = fields.Char('Email', help='BILA MEMPUNYAI EMAIL')
-    
+
     # ALAMAT ==========================================================================
     # KOTA ADMINISTRASI ===============================================================
     kota_administrasi = fields.Selection([('jkt_timur', 'Jakarta Timur'),('jkt_barat', 'Jakarta Barat'),('jkt_selatan', 'Jakarta Selatan'),('jkt_utara', 'Jakarta Utara'),('jkt_pusat', 'Jakarta Pusat'),('kep_seribu', 'Kepulauan Seribu'),], string='Kota Administrasi')
 
     # KECAMATAN =======================================================================
     kec_jkt_timur = fields.Selection([('cakung', 'Cakung'),('cipayung', 'Cipayung'),('ciracas', 'Ciracas'),('duren_sawit', 'Duren Sawit'),('jatinegara', 'Jatinegara'),('kramat_jati', 'Kramat Jati'),('makasar', 'Makasar'),('matraman', 'Matraman'),('pasar_rebo', 'Pasar Rebo'),('pulogadung', 'Pulogadung')], string='Kecamatan')
-    kec_jkt_barat = fields.Selection([('cengkareng', 'Cengkareng'),('grogol_petamburan', 'Grogol Petamburan'),('taman_sari', 'Taman Sari'),('tambora', 'Tambora'),('kebon_jeruk', 'Kebon Jeruk'),('kalideres', 'Kalideres'),('palmerah', 'palmerah'),('kembangan', 'Kembangan')], string='Kecamatan')
+    kec_jkt_barat = fields.Selection([('cengkareng', 'Cengkareng'),('grogol_petamburan', 'Grogol Petamburan'),('taman_sari', 'Taman Sari'),('tambora', 'Tambora'),('kebon_jeruk', 'Kebon Jeruk'),('kalideres', 'Kalideres'),('palmerah', 'Palmerah'),('kembangan', 'Kembangan')], string='Kecamatan')
     kec_jkt_selatan = fields.Selection([('cilandak', 'Cilandak'),('jagakarsa', 'Jagakarsa'),('keb_baru', 'Keb. Baru'),('keb_lama', 'Keb. Lama'),('mampang_prap', 'Mampang Prapatan'),('pancoran', 'Pancoran'),('pasar_minggu', 'Pasar Minggu'),('setia_budi', 'Setia Budi'),('tebet', 'Tebet')], string='Kecamatan')
     kec_jkt_utara = fields.Selection([('cilincing', 'Cilincing'),('kelapa_gading', 'Kelapa Gading'),('koja', 'Koja'),('pademangan', 'Pademangan'),('penjaringan', 'Penjaringan'),('tanjung_priok', 'Tanjung Priok')], string='Kecamatan')
     kec_jkt_pusat = fields.Selection([('cempaka_putih', 'Cempaka Putih'),('gambir', 'Gambir'),('johar_baru', 'Johar Baru'),('kemayoran', 'Kemayoran'),('menteng', 'Menteng'),('sawah_besar', 'Sawah Besar'),('senen', 'Senen'),('tanah_abang', 'Tanah Abang')], string='Kecamatan')
@@ -42,6 +193,7 @@ class extremous(models.Model):
     kel_pulogadung = fields.Selection([('cipinang', 'Cipinang'),('jati', 'Jati'),('jatinegara_kaum', 'Jatinegara Kaum'),('kayu_putih', 'Kayu Putih'),('pisangan_timur', 'Pisangan Timur'),('pulogadung', 'Pulo Gadung'),('rawamangun', 'Rawamangun')], string='Kelurahan')
 
     # KELURAHAN JAKARTA BARAT ==========================================================
+    
     @api.onchange('kota_administrasi')
     def _onchange_kota_administrasi(self):
         if self.kota_administrasi:
@@ -50,17 +202,3 @@ class extremous(models.Model):
             self.kec_jkt_selatan = False
             self.kec_jkt_utara = False
             self.kec_kep_seribu = False
-    
-    @api.onchange('kec_jkt_timur')
-    def _onchange_kec_jkt_timur(self):
-        if self.kec_jkt_timur:
-            self.kel_cakung == False
-            self.kel_cipayung == False
-            self.kel_ciracas == False
-            self.kel_duren_sawit == False
-            self.kel_jatinegara == False
-            self.kel_kramat_jati == False
-            self.kel_makasar == False
-            self.kel_matraman == False
-            self.kel_pasar_rebo == False
-            self.kel_pulogadung == False
