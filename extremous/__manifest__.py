@@ -25,6 +25,8 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'views/master_kecamatan_views.xml',
+        'views/master_administrasi_views.xml',
         'views/pendataan_warga_views.xml',
         'views/templates.xml',
     ],

@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_data_warga_user,extremous.data.warga,model_data_warga,base.group_user,1,1,1,1
+access_master_kota_administrasi_user,extremous.master.kota.administrasi,model_master_kota_administrasi,base.group_user,1,1,1,1
+access_master_kecamatan_user,extremous.master.kecamatan,model_master_kecamatan,base.group_user,1,1,1,1
