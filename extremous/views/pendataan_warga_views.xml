@@ -29,6 +29,17 @@
               <field name="kec_jkt_utara" attrs="{'invisible':[('kota_administrasi','!=','jkt_utara')]}"/>
               <field name="kec_jkt_pusat" attrs="{'invisible':[('kota_administrasi','!=','jkt_pusat')]}"/>
               <field name="kec_kep_seribu" attrs="{'invisible':[('kota_administrasi','!=','kep_seribu')]}"/>
+
+              <field name="kel_cakung" attrs="{'invisible':[('kec_jkt_timur','!=','cakung')]}"/>
+              <field name="kel_cipayung" attrs="{'invisible':[('kec_jkt_timur','!=','cipayung')]}"/>
+              <field name="kel_ciracas" attrs="{'invisible':[('kec_jkt_timur','!=','ciracas')]}"/>
+              <field name="kel_duren_sawit" attrs="{'invisible':[('kec_jkt_timur','!=','duren_sawit')]}"/>
+              <field name="kel_jatinegara" attrs="{'invisible':[('kec_jkt_timur','!=','jatinegara')]}"/>
+              <field name="kel_kramat_jati" attrs="{'invisible':[('kec_jkt_timur','!=','kramat_jati')]}"/>
+              <field name="kel_makasar" attrs="{'invisible':[('kec_jkt_timur','!=','makasar')]}"/>
+              <field name="kel_matraman" attrs="{'invisible':[('kec_jkt_timur','!=','matraman')]}"/>
+              <field name="kel_pasar_rebo" attrs="{'invisible':[('kec_jkt_timur','!=','pasar_rebo')]}"/>
+              <field name="kel_pulogadung" attrs="{'invisible':[('kec_jkt_timur','!=','pulogadung')]}"/>
             </group>
           </sheet>
         </form>
