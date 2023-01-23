@@ -1,47 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <data>
-        <?xml version="1.0" encoding="utf-8"?>
-        <odoo>
-            <data>
-                <record id="master_kecamatan_view_tree" model="ir.ui.view">
-                    <field name="name">master.kecamatan.view.tree</field>
-                    <field name="model">master.kecamatan</field>
-                    <field name="arch" type="xml">
-                        <tree string="Master Kota Administrasi">
+        <record id="master_kecamatan_view_tree" model="ir.ui.view">
+            <field name="name">master.kecamatan.view.tree</field>
+            <field name="model">master.kecamatan</field>
+            <field name="arch" type="xml">
+                <tree string="Master Kota Administrasi">
+                    <field name="master_kota_administrasi_id" />
+                    <field name="is_kecamatan" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="master_kecamatan_view_form" model="ir.ui.view">
+            <field name="name">master.kecamatan.view.form</field>
+            <field name="model">master.kecamatan</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
                             <field name="master_kota_administrasi_id" />
                             <field name="is_kecamatan" />
-                        </tree>
-                    </field>
-                </record>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
 
-                <record id="master_kecamatan_view_form" model="ir.ui.view">
-                    <field name="name">master.kecamatan.view.form</field>
-                    <field name="model">master.kecamatan</field>
-                    <field name="arch" type="xml">
-                        <form>
-                            <sheet>
-                                <group>
-                                    <field name="master_kota_administrasi_id" />
-                                    <field name="is_kecamatan" />
-                                </group>
-                            </sheet>
-                        </form>
-                    </field>
-                </record>
+        <record id="master_kecamatan_action" model="ir.actions.act_window">
+            <field name="name">Master Kecamatan</field>
+            <field name="res_model">master.kecamatan</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
 
-                <record id="master_kecamatan_action" model="ir.actions.act_window">
-                    <field name="name">Master Kecamatan</field>
-                    <field name="res_model">master.kecamatan</field>
-                    <field name="view_mode">tree,form</field>
-                    <field name="domain">[]</field>
-                    <field name="context">{}</field>
-                </record>
-
-                <menuitem id="master_menu" name="Master Menu" parent="pendataan_warga_root_menu" sequence="10"/>
-                <menuitem id="master_administrasi_menu" name="Master Kecamatan" action="master_kecamatan_action" parent="master_menu"/>
-            </data>
-        </odoo>
+        <menuitem id="master_menu" name="Master Menu" parent="pendataan_warga_root_menu" sequence="10"/>
+        <menuitem id="master_kecamatan_menu" name="Master Kecamatan" action="master_kecamatan_action" parent="master_menu"/>
     </data>
 </odoo>

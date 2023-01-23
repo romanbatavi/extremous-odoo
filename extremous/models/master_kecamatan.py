@@ -33,3 +33,4 @@ class MasterKecamatan(models.Model):
         ('pulo_gadung', 'Pulo Gadung')
     ], string='Kecamatan')
     
+    
