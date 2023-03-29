@@ -19,7 +19,6 @@
                 <form>
                     <sheet>
                         <group col="4">
-                            <field name="roman_boolean" required="1"/>
                             <field name="nama_kota" required="1"/>
                             <field name="is_kota" required="1"/>
                         </group>
