@@ -72,10 +72,5 @@
       <field name="domain">[]</field>
       <field name="context">{}</field>
     </record>
-
-
-
-    <menuitem id="pendataan_warga_root_menu" name="Pendataan Warga" web_icon="extremous,static/description/odoo_icon.png"/>
-    <menuitem id="pendataan_warga_sub_menu" name="Pendataan Warga" action="pendataan_warga_action" parent="pendataan_warga_root_menu"/>
   </data>
 </odoo>

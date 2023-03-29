@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="pendataan_warga_root_menu" name="Pendataan Warga" web_icon="extremous,static/description/odoo_icon.png"/>
+        <menuitem id="pendataan_warga_sub_menu" name="Pendataan Warga" action="pendataan_warga_action" parent="pendataan_warga_root_menu"/>
+        <menuitem id="master_administrasi_sub_menu" name="Master Administrasi" action="master_administrasi_action" parent="pendataan_warga_root_menu"/>
+    </data>
+</odoo>

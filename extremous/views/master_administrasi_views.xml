@@ -19,6 +19,7 @@
                 <form>
                     <sheet>
                         <group col="4">
+                            <field name="roman_boolean" required="1"/>
                             <field name="nama_kota" required="1"/>
                             <field name="is_kota" required="1"/>
                         </group>
@@ -34,8 +35,5 @@
             <field name="domain">[]</field>
             <field name="context">{}</field>
         </record>
-
-        <menuitem id="master_menu" name="Master Menu" parent="pendataan_warga_root_menu" sequence="10"/>
-        <menuitem id="master_administrasi_menu" name="Master Administrasi" action="master_administrasi_action" parent="master_menu"/>
     </data>
 </odoo>

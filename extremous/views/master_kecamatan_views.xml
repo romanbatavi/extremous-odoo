@@ -34,8 +34,5 @@
             <field name="domain">[]</field>
             <field name="context">{}</field>
         </record>
-
-        <menuitem id="master_menu" name="Master Menu" parent="pendataan_warga_root_menu" sequence="10"/>
-        <menuitem id="master_kecamatan_menu" name="Master Kecamatan" action="master_kecamatan_action" parent="master_menu"/>
     </data>
 </odoo>
